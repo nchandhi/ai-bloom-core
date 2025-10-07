@@ -1,0 +1,110 @@
+# Project information .........................................
+site_name: "AI Bloom"
+site_url: https://aibloom.github.io/
+site_author: nchandhi
+site_description: >-
+  AI Bloom
+
+# Repository ..................................................
+repo_name: nchandhi/ai-bloom-core
+repo_url: https://github.com/nchandhi/ai-bloom-core
+
+# Configuration ...............................................
+theme:
+  name: material
+  features:
+    - navigation.tabs               # Enables top navigation tabs
+    - navigation.indexes            # Ensures only `index.md` files are shown in the sidebar
+  font:
+    code: Roboto Mono  #Monospaced
+    text: Roboto       #Regular
+  # logo: img/postgresql.svg
+  language: en
+  custom_dir: overrides #Add custom header scripts
+
+  # Theme Modes ...............................................
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: blue
+      accent: pink
+      toggle:
+        icon: material/brightness-2
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue gray
+      accent: dark blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system mode
+  
+  # Theme Features ...............................................
+  features:
+    - navigation.instant    
+    - navigation.expand             # sidebar collapsible sections open
+    - navigation.instant.progress   # load progress indicator
+    - navigation.tracking           # tracks anchor tags in URL
+    - navigation.tabs               # tabbed on desktop, single in mobile    
+    - navigation.tabs.sticky        # tabs stick when scrolling downtheme:
+    - navigation.path               # add breadcrumbs
+    - navigation.indexes            # default index.md in folder is section page
+    - navigation.top
+    - toc.follow
+    - navigation.footer
+    - content.code.copy             # allow copy-paste from codeblocks
+    - content.tabs.link             # Ensures site-wide switch to same tab name
+
+# Extras  ...............................................
+extra:
+  generator: false  
+  #alternate:
+  #  - name: English
+  #    link: https://github.com/nchandhi/ai-bloom-core
+  #    lang: en
+  #  - name: Japanese
+  #    link: https://github.com/nchandhi/ai-bloom-core/ja
+  #    lang: ja
+
+# Plugins  ...............................................
+plugins:
+  - search
+  - mkdocs-jupyter
+
+# Extensions  ...............................................
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      auto_title: true
+      linenums: true
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+# Navigation  ...............................................
+nav:
+  - Introduction: index.md
+  - Overview: Labs/lab1.md
+    
